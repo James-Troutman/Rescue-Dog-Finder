@@ -68,8 +68,12 @@ import DogCard from '@/components/DogCard.vue';
                     breed: animal.breeds.primary,
                     description: animal.description,
                     photo: animal.photos && animal.photos.length > 0 ? animal.photos[0].small : null,
+                    distance: animal.distance,
 
                 }))
+
+                this.dogs.sort((a, b) => a.distance -b.distance);
+
             }catch (error) {
                 console.error('Error: Could not access database', error);
             }

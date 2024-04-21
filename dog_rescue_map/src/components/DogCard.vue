@@ -6,9 +6,11 @@
 
     <div id="dog-details">
         <h2 id="dog-name">{{ dog.name}}</h2>
-        <h3 id="dog-breed">{{ dog.breed }}</h3>
+        <h3 id="dog-breed">{{ dog.breed }}</h3> 
         <h3 id="dog-description">Description</h3>
         <p>{{ dog.description }}</p>
+        <p id="dog-distance">{{ dog.distance }} Miles From You</p>
+
 
         <div class="info-page-btns">
             <button id="more-info">Get More Info About This Dog</button>
