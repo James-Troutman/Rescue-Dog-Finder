@@ -1,24 +1,21 @@
 <template>
 
     <div>
-        Find an Adoptable Dog Near You
+        <div id="search-form">
+        <h1 id="home-header">Find an Adoptable Dog Near You</h1>
         <form @submit.prevent="search">
-            <input v-model="zip" placeholder="Please Enter Your Zip Code" />
+            <input id="text-box" v-model="zip" placeholder="Please Enter Your Zip Code" />
             <input type="Submit" id="Submit">
         </form>
+        </div>
 
-        <ul>
-            <div v-for="dog in dogs" :key="dog.id">
-                <h2>{{ dog.name }}</h2>
-                <h3>{{ dog.breed }}</h3>
-                <p>{{ dog.description }}</p>
-                <img :id="'dog-image-' + dog.id" :src="dog.photo">
-            </div>
-        </ul>
+        <DogCard v-for="dog in dogs" :key="dog.id" :dog="dog" />
+       
     </div>
 </template>
 
 <script>
+import DogCard from '@/components/DogCard.vue';
 
 
     export default {
@@ -27,6 +24,10 @@
                 zip: '',
                 dogs: [],
             }
+        },
+
+        components: {
+            DogCard
         },
 
         methods: {
@@ -63,7 +64,7 @@
                 
                 .map(animal => ({
                     id: animal.id,
-                    name: animal.name,
+                    name: animal.name.split(' ')[0],
                     breed: animal.breeds.primary,
                     description: animal.description,
                     photo: animal.photos && animal.photos.length > 0 ? animal.photos[0].small : null,
@@ -81,9 +82,31 @@
 
 <style>
 
+#home-header {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px black;
+}
+
+#text-box {
+    height: 30px;
+    width: 225px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
 img {
     max-width: 250px;
     min-width: 250px;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px;
 }
 
 </style>

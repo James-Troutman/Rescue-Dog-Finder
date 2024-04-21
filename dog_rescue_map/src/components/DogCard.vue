@@ -1,17 +1,16 @@
 <template>
     <div id="dog-card">
     <div id="dog-img-container">
-        <img id="dog-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cute_dog.jpg/2560px-Cute_dog.jpg">
+        <img id="dog-image" :src="dog.photo">
     </div>
 
     <div id="dog-details">
-        <h2 id="dog-name">Dog Name</h2>
-        <h3 id="dog-breed">Breed</h3>
+        <h2 id="dog-name">{{ dog.name}}</h2>
+        <h3 id="dog-breed">{{ dog.breed }}</h3>
         <h3 id="dog-description">Description</h3>
-        <p>Dog Description goes here</p>
+        <p>{{ dog.description }}</p>
 
         <div class="info-page-btns">
-            <button id="back-button" @click="$router.go(-1)">Back to List</button>
             <button id="more-info">Get More Info About This Dog</button>
         </div>
 
@@ -20,10 +19,26 @@
 
 </template>
 
+<script>
+
+export default {
+    props: {
+            dog: {
+                type: Object,
+                required: true
+            }
+        }
+    }
+
+
+</script>
+
 <style>
 
 #dog-card {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 75px;
     margin-bottom: 75px;
 }
@@ -52,7 +67,7 @@
 }
 
 #dog-details > h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 #dog-details > h3 {
@@ -65,23 +80,25 @@
 
 .info-page-btns > button {
     height: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    white-space: nowrap;
-    text-align: center;
-    border-radius: 20px;
-    background-color: green;
-    box-shadow: 2px 2px 5px black;
-    font-size: 1rem;
+    padding: 5px 15px;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.2rem;
     font-weight: 500;
+    white-space: nowrap;
+    border-radius: 3px;
+    text-align: center;
+    color: black;
+    background-color: rgb(200, 199, 210);
+    box-shadow: 2px 2px 5px black;
+
     margin-bottom: 15px;
     margin-right: 15px;
 }
 
 .info-page-btns > button:hover {
     cursor: pointer;
-    background-color: blue;
-    transition: .7s;
+    background-color: rgb(119, 118, 128);
+    transition: .5s;
 }
 
 
