@@ -5,6 +5,8 @@
         <h1 id="home-header">Find an Adoptable Dog Near You</h1>
         <form @submit.prevent="search">
             <input id="text-box" v-model="zip" placeholder="Please Enter Your Zip Code" />
+
+            
             <input type="Submit" id="Submit">
         </form>
         </div>
@@ -65,10 +67,13 @@ import DogCard from '@/components/DogCard.vue';
                 .map(animal => ({
                     id: animal.id,
                     name: animal.name.split(' ')[0],
+
                     breed: animal.breeds.primary,
+                    age: animal.age,
                     description: animal.description,
                     photo: animal.photos && animal.photos.length > 0 ? animal.photos[0].small : null,
                     distance: animal.distance,
+                    url: animal.url,
 
                 }))
 

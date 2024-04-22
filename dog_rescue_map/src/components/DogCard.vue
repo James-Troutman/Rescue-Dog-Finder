@@ -6,14 +6,13 @@
 
     <div id="dog-details">
         <h2 id="dog-name">{{ dog.name}}</h2>
-        <h3 id="dog-breed">{{ dog.breed }}</h3> 
-        <h3 id="dog-description">Description</h3>
-        <p>{{ dog.description }}</p>
-        <p id="dog-distance">{{ dog.distance }} Miles From You</p>
+        <h3 id="dog-breed">Breed: {{ dog.breed }}</h3> 
+        <h3  id="dog-age">Age: {{ dog.age }}</h3>
+        <p id="dog-distance">{{ dog.distance }} miles away</p>
 
 
         <div class="info-page-btns">
-            <button id="more-info">Get More Info About This Dog</button>
+            <button id="more-info-button" @click="openInNewTab(dog.url)" >Get More Info About This Dog</button>
         </div>
 
     </div>
@@ -29,6 +28,12 @@ export default {
                 type: Object,
                 required: true
             }
+        },
+
+        methods: {
+            openInNewTab(url) {
+                window.open(url, '_blank');
+            }
         }
     }
 
@@ -41,6 +46,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 700px;
+    margin: auto;
     margin-top: 75px;
     margin-bottom: 75px;
 }
@@ -80,7 +87,7 @@ export default {
     font-size: 1.1rem;
 }
 
-.info-page-btns > button {
+#more-info-button {
     height: 30px;
     padding: 5px 15px;
     font-family: "League Spartan", sans-serif;
@@ -97,7 +104,7 @@ export default {
     margin-right: 15px;
 }
 
-.info-page-btns > button:hover {
+#more-info-button:hover {
     cursor: pointer;
     background-color: rgb(119, 118, 128);
     transition: .5s;

@@ -1,8 +1,9 @@
 <template>
   <div id="dog-app">
   
-  <router-link v-bind:to="{ name: 'dogs'}">Hello World!</router-link>
-
+    <div id="logo-container">
+  <img src="PetFinderLogo.png" alt="Dog Logo">
+</div>
   <router-view />
   </div>
 </template>
@@ -20,5 +21,15 @@ export default {
 <style>
 #dog-app {
   background-image: url('')
+}
+
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-container > img {
+  width: 700px;
 }
 </style>
