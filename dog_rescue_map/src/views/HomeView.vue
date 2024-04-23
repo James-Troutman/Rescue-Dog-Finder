@@ -11,7 +11,7 @@
         </form>
         </div>
 
-        <DogCard v-for="dog in dogs" :key="dog.id" :dog="dog" />
+        <DogCard id="dog-card" v-for="dog in dogs" :key="dog.id" :dog="dog" />
        
     </div>
 </template>
@@ -72,12 +72,12 @@ import DogCard from '@/components/DogCard.vue';
                     age: animal.age,
                     description: animal.description,
                     photo: animal.photos && animal.photos.length > 0 ? animal.photos[0].small : null,
-                    distance: animal.distance,
+                    distance: Math.round(animal.distance),
                     url: animal.url,
 
                 }))
 
-                this.dogs.sort((a, b) => a.distance -b.distance);
+                this.dogs.sort((a, b) => a.distance - b.distance);
 
             }catch (error) {
                 console.error('Error: Could not access database', error);
@@ -132,7 +132,7 @@ import DogCard from '@/components/DogCard.vue';
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 125px;
     margin-right: 300px;
 }
 

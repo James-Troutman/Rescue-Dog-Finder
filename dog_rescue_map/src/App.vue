@@ -19,9 +19,7 @@ export default {
 </script>
 
 <style>
-#dog-app {
-  background-image: url('')
-}
+
 
 #main-header {
   display: flex;
@@ -36,6 +34,7 @@ export default {
 }
 
 #finder {
+  text-shadow: none;
   color: black;
 }
 

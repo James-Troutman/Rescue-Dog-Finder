@@ -5,7 +5,7 @@
     </div>
 
     <div id="dog-details">
-        <h2 id="dog-name">{{ dog.name}}</h2>
+        <h2 id="dog-name">Name: {{ dog.name}}</h2>
         <h3 id="dog-breed">Breed: {{ dog.breed }}</h3> 
         <h3  id="dog-age">Age: {{ dog.age }}</h3>
         <p id="dog-distance">{{ dog.distance }} miles away</p>
@@ -72,11 +72,11 @@ export default {
     align-items: flex-start;
     margin-left: 30px;
     margin-right: 30px;
-    text-shadow: 2px 2px 5px black;
+    color: black;
 }
 
 #dog-details > h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 #dog-details > h3 {
@@ -96,9 +96,9 @@ export default {
     white-space: nowrap;
     border-radius: 3px;
     text-align: center;
-    color: black;
-    background-color: rgb(200, 199, 210);
-    box-shadow: 2px 2px 5px black;
+    color: white;
+    background-color: #d61c1c;
+    
 
     margin-bottom: 15px;
     margin-right: 15px;
