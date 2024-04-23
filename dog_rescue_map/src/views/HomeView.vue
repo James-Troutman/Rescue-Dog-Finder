@@ -7,7 +7,7 @@
             <input id="text-box" v-model="zip" placeholder="Please Enter Your Zip Code" />
 
             
-            <input type="Submit" id="Submit">
+            <input type="Submit" id="submit" value="Search">
         </form>
         </div>
 
@@ -99,23 +99,41 @@ import DogCard from '@/components/DogCard.vue';
 #text-box {
     height: 30px;
     width: 225px;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 2px solid black;
     font-size: 1rem;
     font-weight: 500;
     margin-right: 15px;
 }
 
-img {
-    max-width: 250px;
-    min-width: 250px;
+#submit {
+    background-color: #d61c1c;
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    font-weight: 500;
+    font-family: "League Spartan", sans-serif;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: transform 0.2s ease;
 }
+
+#submit:hover {
+    cursor: pointer;  
+}
+
+#submit:active {
+    transition: transform 0.2s ease;
+}
+
 
 #search-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 300px;
+    margin-top: 150px;
+    margin-right: 300px;
 }
 
 </style>

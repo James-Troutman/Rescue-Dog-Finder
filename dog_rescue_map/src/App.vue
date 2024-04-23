@@ -1,9 +1,9 @@
 <template>
   <div id="dog-app">
+    <div id="main-header">
+    <h1 id="title">Four-Legged Friend <span id="finder">Finder</span></h1>
+     </div>
   
-    <div id="logo-container">
-  <img src="PetFinderLogo.png" alt="Dog Logo">
-</div>
   <router-view />
   </div>
 </template>
@@ -23,13 +23,21 @@ export default {
   background-image: url('')
 }
 
-#logo-container {
+#main-header {
   display: flex;
   justify-content: center;
-  align-items: center;
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 5px black;
+  margin-top: 25px;
 }
 
-#logo-container > img {
-  width: 700px;
+#title {
+  color: #d61c1c;
 }
+
+#finder {
+  color: black;
+}
+
+
 </style>
